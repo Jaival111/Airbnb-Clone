@@ -47,6 +47,13 @@ let items = [
     }
 ];
 
+router.get('/', (_req, res) => {
+    res.json({
+        message: 'Fullstack Express API server',
+        endpoints: ['/api/health', '/api/listing', '/api/similar', '/api/items']
+    });
+});
+
 // Health Check Endpoint
 router.get('/health', (req, res) => {
     res.status(200).json({
